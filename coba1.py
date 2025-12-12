@@ -9,7 +9,7 @@ login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False,False )
 login.title("LOGIN MEMBER MINI MARKET")
-login.configure(background="#C983DA")
+login.configure(background="#B1B1B1")
 
 # STYLE
 style = ttk.Style()
