@@ -8,12 +8,12 @@ import random
 login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False,False )
-login.title("LOGIN MEMBER MINI MARKET")
+login.title("LOGIN MEMBER JKT48")
 login.configure(background="#B1B1B1")
 
 # STYLE
 style = ttk.Style()
-style.configure("white.TLabel", background='#1E1E2E', foreground='white')
+style.configure("white.TLabel", background="#2E1E2B", foreground='white')
 style.configure("submit_btn.TButton", font=('calibri', 11, 'bold'))
 label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith',style="frame_label.TLabel")
 label_info.pack(padx=10,fill='y')
