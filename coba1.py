@@ -4,6 +4,7 @@ from tkinter import StringVar
 import random
 
 # ========== WINDOW LOGIN ==========
+#tes tes tes
 login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False,False )
