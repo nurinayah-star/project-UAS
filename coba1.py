@@ -8,7 +8,6 @@ login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False,False )
 login.title("LOGIN MEMBER MINI MARKET")
-login.title("LOGIN MEMBER y")
 login.configure(background="#B1B1B1")
 
 #----------------------STYLE
@@ -29,7 +28,7 @@ def masuk():
         messagebox.showerror("Error", "Username dan password tidak boleh kosong!")
         return
 
-    if user == "admin" and pw == "123":
+    if user == "remajajompo" and pw == "123":
         login.destroy()
         buka_form_member()
     else:
