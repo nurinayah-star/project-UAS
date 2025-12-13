@@ -28,7 +28,7 @@ def masuk():
         messagebox.showerror("Error", "Username dan password tidak boleh kosong!")
         return
 
-    if user == "remajajompo" and pw == "123":
+    if user == "r" and pw == "123":
         login.destroy()
         buka_form_member()
     else:
@@ -126,8 +126,7 @@ def buka_form_member():
     ttk.Button(frame_input, text="Buat Kartu Member", style="submit_btn.TButton",
                command=buka_kartu).pack(pady=20, fill='x')
 
-    label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith /n |@_inayaa.h |@nufdhmn',style="frame_label.TLabel")
-    label_info.pack(padx=10,fill='y')
+
     gui.mainloop()
 
 login.mainloop()
