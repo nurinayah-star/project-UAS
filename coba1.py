@@ -29,8 +29,9 @@ def masuk():
         return
 
     if user == "r" and pw == "123":
-        login.destroy()
-        buka_form_member()
+            login.destroy()
+            buka_form_member()
+
     else:
         messagebox.showerror("Gagal Login", "Username / password salah!")
 
@@ -52,7 +53,8 @@ def buka_form_member():
     gui.geometry('400x520')
     gui.resizable(False, False)
     gui.title("MEMBER MINI MARKET")
-    login.configure(background="#B1B1B1")
+    gui.configure(background="#B1B1B1")
+
 
     # ----------------------VARIABLES
     NAMA = StringVar()
@@ -101,11 +103,12 @@ def buka_form_member():
         ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
         
-    #----------------------GUI UTAMA
-    ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#B1B1B1",)
-    font=('calibri', 16, 'bold').pack(pady=10)
-    ttk.Label(gui, text="Masukkan data kamu", foreground="white",background="#B1B1B1")
-    font=('calibri', 12).pack()
+   
+    # ------------ GUI UTAMA ------------
+    ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#1E1E2E",
+              font=('calibri', 16, 'bold')).pack(pady=10)
+    ttk.Label(gui, text="Masukkan data kamu", foreground="white", background="#1E1E2E",
+              font=('calibri', 12)).pack()
     
     frame_input = ttk.Frame(gui)
     frame_input.pack(padx=25, pady=20, fill='both', expand=True)

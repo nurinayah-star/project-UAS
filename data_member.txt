@@ -1,3 +1,5 @@
 naya,18,p,islam
 naya,18,p,islam
 nn,1,p,is
+nay,18,p,islam
+n,1,r,i
