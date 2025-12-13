@@ -8,7 +8,7 @@ import random
 login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False,False )
-login.title("LOGIN MEMBER JKT48")
+login.title("LOGIN MEMBER MINI MARKET")
 login.configure(background="#B1B1B1")
 
 # STYLE
