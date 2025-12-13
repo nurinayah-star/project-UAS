@@ -25,7 +25,7 @@ def masuk():
     pw = PASSWORD.get()
 
     if user == "" or pw == "":
-        messagebox.showerror("Error", "Username dan password tidak boleh kosong!")
+        messagebox.showerror("Error", "data tidak boleh kosong!")
         return
 
     if user == "r" and pw == "123":
@@ -52,7 +52,7 @@ def buka_form_member():
     gui.geometry('400x520')
     gui.resizable(False, False)
     gui.title("MEMBER MINI MARKET")
-    gui.configure(background='#1E1E2E')
+    login.configure(background="#B1B1B1")
 
     # ----------------------VARIABLES
     NAMA = StringVar()
@@ -102,10 +102,10 @@ def buka_form_member():
         ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
         
     #----------------------GUI UTAMA
-    ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#1E1E2E",
-              font=('calibri', 16, 'bold')).pack(pady=10)
-    ttk.Label(gui, text="Masukkan data kamu", foreground="white", background="#1E1E2E",
-              font=('calibri', 12)).pack()
+    ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#B1B1B1",)
+    font=('calibri', 16, 'bold').pack(pady=10)
+    ttk.Label(gui, text="Masukkan data kamu", foreground="white",background="#B1B1B1")
+    font=('calibri', 12).pack()
     
     frame_input = ttk.Frame(gui)
     frame_input.pack(padx=25, pady=20, fill='both', expand=True)
