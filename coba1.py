@@ -14,7 +14,7 @@ login.configure(background="#B1B1B1")
 style = ttk.Style()
 style.configure("white.TLabel",background="#2E1E2B", foreground='white')
 style.configure("submit_btn.TButton", font=('calibri', 11, 'bold'))
-label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith',style="frame_label.TLabel")
+label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith /n |@_inayaa.h |@nufdhmn',style="frame_label.TLabel")
 label_info.pack(padx=10,fill='y')
 
 USERNAME = StringVar()
@@ -94,13 +94,13 @@ def buka_form_member():
         #----------------------Kartu
         frame = ttk.Frame(gui2)
         frame.pack(padx=20, pady=20, fill='both', expand=True)
-        label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith',style="frame_label.TLabel")
+        label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith /n |@_inayaa.h |@nufdhmn',style="frame_label.TLabel")
         label_info.pack(padx=10,fill='y')
         ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('calibri', 14, 'bold')).pack(pady=10)
         ttk.Label(frame, text=f"Nama   : {nama}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
-        ttk.Label(frame, text=f"Umur   : {jenis_kelamin}", font=('calibri', 12)).pack()
-        ttk.Label(frame, text=f"Umur   : {agama}", font=('calibri', 12)).pack()
+        ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
+        ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
 
     #----------------------GUI UTAMA
     ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#1E1E2E",
@@ -126,7 +126,7 @@ def buka_form_member():
     ttk.Button(frame_input, text="Buat Kartu Member", style="submit_btn.TButton",
                command=buka_kartu).pack(pady=20, fill='x')
 
-    label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith',style="frame_label.TLabel")
+    label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith /n |@_inayaa.h |@nufdhmn',style="frame_label.TLabel")
     label_info.pack(padx=10,fill='y')
     gui.mainloop()
 
