@@ -28,7 +28,7 @@ def masuk():
 
 #-----------------------Error Handling
     if user == "" or pw == "":
-        messagebox.showerror("Error", "data tidak boleh kosong!")
+        messagebox.showerror("Error", "data nya ngga boleh kosong yaa!😊")
         return
 
     if user == "remajajompo" and pw == "123":
@@ -36,7 +36,7 @@ def masuk():
             buka_form_member()
 
     else:
-        messagebox.showerror("Gagal Login", "Username / password salah!")
+        messagebox.showerror("Gagal Login", "Waduh.. Username / password kamu salah")
 
 tk.Label(login, text="LOGIN", bg="#391E10", fg="white",
          font=('calibri', 16, 'bold')).pack(pady=10)
@@ -47,9 +47,9 @@ frame_log = ttk.Frame(login)
 frame_log.pack(pady=5, padx=10, fill='x')
 frame_log.pack(pady=15, padx=20, fill='x')
 
-ttk.Label(frame_log, text="Username:", style="white.TLabel").pack(anchor="w")
+ttk.Label(frame_log, text="👤 Username:", style="white.TLabel").pack(anchor="w")
 ttk.Entry(frame_log, textvariable=USERNAME).pack(fill='x')
-ttk.Label(frame_log, text="Password:", style="white.TLabel").pack(anchor="w", pady=(10,0))
+ttk.Label(frame_log, text="🔑 Password:", style="white.TLabel").pack(anchor="w", pady=(10,0))
 ttk.Entry(frame_log, textvariable=PASSWORD, show="*").pack(fill='x')
 ttk.Button(frame_log, text="MASUK", style="submit_btn.TButton", command=masuk).pack(pady=20, fill='x')
 
@@ -57,7 +57,7 @@ ttk.Button(frame_log, text="MASUK", style="submit_btn.TButton", command=masuk).p
 
 def buka_form_member():
     gui = tk.Tk()
-    gui.geometry('400x520')
+    gui.geometry('400x400')
     gui.resizable(False, False)
     gui.title("MEMBER MINI MARKET")
     gui.configure(background='#B1B1B1')
@@ -102,22 +102,14 @@ def buka_form_member():
 
         #----------------------Kartu
         frame = ttk.Frame(gui2)
-        frame.pack(padx=20, pady=15, expand=True)
-        label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith',style="frame_label.TLabel")
+        frame.pack(padx=20, pady=15, expand=False)
         label_info.pack(padx=10,fill='y')
-
-        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('calibri', 14, 'bold')).pack(pady=15)
-        frame.pack(padx=20, pady=20, fill='both', expand=True)
-        
-        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('Impact', 14, 'bold')).pack(pady=10)
+      
+        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('calibri', 14, 'bold')).pack()
         ttk.Label(frame, text=f"Nama   : {nama}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
-
-    #----------------------GUI UTAMA
-    ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#391E10")
-
     
    
     # ------------ GUI UTAMA ------------
@@ -132,13 +124,13 @@ def buka_form_member():
     ttk.Label(frame_input, text="Nama:", foreground="white", background="#391E10").pack(anchor="w")
     ttk.Entry(frame_input, textvariable=NAMA).pack(fill='x')
     #----------------------LABEL UNTUK UMUR
-    ttk.Label(frame_input, text="Umur:", foreground="white", background="#391E10").pack(anchor="w", pady=(10,0))
+    ttk.Label(frame_input, text="Umur:", foreground="white", background="#391E10").pack(anchor="w", pady=(8,0))
     ttk.Entry(frame_input, textvariable=UMUR).pack(fill='x')
      #----------------------LABEL UNTUK JENIS_KELAMIN
-    ttk.Label(frame_input, text="Jenis_Kelamin:", foreground="white", background="#391E10").pack(anchor="w", pady=(10,0))
+    ttk.Label(frame_input, text="Jenis_Kelamin:", foreground="white", background="#391E10").pack(anchor="w", pady=(8,0))
     ttk.Entry(frame_input, textvariable=JENIS_KELAMIN).pack(fill='x')
      #----------------------LABEL UNTUK AGAMA
-    ttk.Label(frame_input, text="Agama:", foreground="white", background="#391E10").pack(anchor="w", pady=(10,0))
+    ttk.Label(frame_input, text="Agama:", foreground="white", background="#391E10").pack(anchor="w", pady=(8,0))
     ttk.Entry(frame_input, textvariable=AGAMA).pack(fill='x')
      #----------------------TOMBOL CETAK KARTU MEMBER
     ttk.Button(frame_input, text="Buat Kartu Member", style="submit_btn.TButton",
