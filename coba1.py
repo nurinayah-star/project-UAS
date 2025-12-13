@@ -100,8 +100,7 @@ def buka_form_member():
         ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
-        label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith /n |@_inayaa.h |@nufdhmn',style="frame_label.TLabel")
-        label_info.pack(padx=10,fill='y')
+        
     #----------------------GUI UTAMA
     ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#1E1E2E",
               font=('calibri', 16, 'bold')).pack(pady=10)
@@ -125,7 +124,9 @@ def buka_form_member():
      #----------------------TOMBOL CETAK KARTU MEMBER
     ttk.Button(frame_input, text="Buat Kartu Member", style="submit_btn.TButton",
                command=buka_kartu).pack(pady=20, fill='x')
-
+   
+    label_info = ttk.Label(text='More Info: @ith.campus | @pmb_ith /n |@_inayaa.h |@nufdhmn',style="frame_label.TLabel")
+    label_info.pack(padx=10,fill='y')
 
     gui.mainloop()
 
