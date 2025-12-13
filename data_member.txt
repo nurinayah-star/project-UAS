@@ -1,2 +1,3 @@
 naya,18,p,islam
 na,19,p,islam
+bb,1,r,r
