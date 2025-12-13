@@ -40,6 +40,7 @@ ttk.Label(login, text="Masukkan akun kamu", style="white.TLabel").pack()
 
 frame_log = ttk.Frame(login)
 frame_log.pack(pady=15, padx=20, fill='x')
+
 ttk.Label(frame_log, text="Username:", style="white.TLabel").pack(anchor="w")
 ttk.Entry(frame_log, textvariable=USERNAME).pack(fill='x')
 ttk.Label(frame_log, text="Password:", style="white.TLabel").pack(anchor="w", pady=(10,0))
@@ -97,7 +98,7 @@ def buka_form_member():
         frame = ttk.Frame(gui2)
         frame.pack(padx=20, pady=20, fill='both', expand=True)
         
-        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('calibri', 14, 'bold')).pack(pady=10)
+        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('Impact', 14, 'bold')).pack(pady=10)
         ttk.Label(frame, text=f"Nama   : {nama}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
