@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 naya,17,p,islam
 naya,18,p8282,uww
 naya,19,p,islam
@@ -8,3 +9,11 @@ dilla,17,cewe,ukhti
 dil,15,cwe,i
 d,24,db,df
 dfbf,75547,gn,tg
+=======
+naya,18,p,islam
+naya,18,p,islam
+nn,1,p,is
+nay,18,p,islam
+n,1,r,i
+na,1,w,i
+>>>>>>> 89503742555cafe70654b86693256887f204f67e

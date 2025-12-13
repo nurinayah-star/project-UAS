@@ -28,12 +28,13 @@ def masuk():
 
 #-----------------------Error Handling
     if user == "" or pw == "":
-        messagebox.showerror("Error", "Username dan password tidak boleh kosong!")
+        messagebox.showerror("Error", "data tidak boleh kosong!")
         return
 
     if user == "remajajompo" and pw == "123":
-        login.destroy()
-        buka_form_member()
+            login.destroy()
+            buka_form_member()
+
     else:
         messagebox.showerror("Gagal Login", "Username / password salah!")
 
@@ -44,6 +45,8 @@ ttk.Label(login, text="Masukkan akun kamu", style="white.TLabel").pack()
 
 frame_log = ttk.Frame(login)
 frame_log.pack(pady=5, padx=10, fill='x')
+frame_log.pack(pady=15, padx=20, fill='x')
+
 ttk.Label(frame_log, text="Username:", style="white.TLabel").pack(anchor="w")
 ttk.Entry(frame_log, textvariable=USERNAME).pack(fill='x')
 ttk.Label(frame_log, text="Password:", style="white.TLabel").pack(anchor="w", pady=(10,0))
@@ -54,10 +57,11 @@ ttk.Button(frame_log, text="MASUK", style="submit_btn.TButton", command=masuk).p
 
 def buka_form_member():
     gui = tk.Tk()
-    gui.geometry('400x500')
+    gui.geometry('400x520')
     gui.resizable(False, False)
     gui.title("MEMBER MINI MARKET")
     gui.configure(background='#B1B1B1')
+    gui.configure(background="#B1B1B1")
 
     # ----------------------VARIABLES
     NAMA = StringVar()
@@ -103,14 +107,22 @@ def buka_form_member():
         label_info.pack(padx=10,fill='y')
 
         ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('calibri', 14, 'bold')).pack(pady=15)
+        frame.pack(padx=20, pady=20, fill='both', expand=True)
+        
+        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('Impact', 14, 'bold')).pack(pady=10)
         ttk.Label(frame, text=f"Nama   : {nama}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
 
     #----------------------GUI UTAMA
+    ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#391E10")
+
+    
+   
+    # ------------ GUI UTAMA ------------
     ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#391E10",
-              font=('calibri', 16, 'bold')).pack(pady=10)
+            font=('calibri', 16, 'bold')).pack(pady=10)
     ttk.Label(gui, text="Masukkan data kamu", foreground="white", background="#391E10",
               font=('calibri', 12)).pack()
     
@@ -134,6 +146,7 @@ def buka_form_member():
 
     label_info = ttk.Label(text='More Info: @_inayaa.h | @nufdhmn',style="frame_label.TLabel")
     label_info.pack(padx=10,fill='y')
+
     gui.mainloop()
 
 login.mainloop()
