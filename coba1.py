@@ -3,12 +3,11 @@ from tkinter import ttk, messagebox
 from tkinter import StringVar
 import random
 
-# ========== WINDOW LOGIN ==========
-#tes tes tes
+# wINDOW LOGIN
 login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False,False )
-login.title("LOGIN MEMBER JKT48")
+login.title("LOGIN MEMBER y")
 login.configure(background="#B1B1B1")
 
 # STYLE
@@ -46,7 +45,7 @@ ttk.Label(frame_log, text="Password:", style="white.TLabel").pack(anchor="w", pa
 ttk.Entry(frame_log, textvariable=PASSWORD, show="*").pack(fill='x')
 ttk.Button(frame_log, text="MASUK", style="submit_btn.TButton", command=masuk).pack(pady=20, fill='x')
 
-# ========== FORM UTAMA MEMBER ==========
+# FORM UTAMA MEMBER
 
 def buka_form_member():
     gui = tk.Tk()
@@ -61,7 +60,7 @@ def buka_form_member():
     JENIS_KELAMIN= StringVar()
     AGAMA=StringVar()
 
-    # ------------ Fungsi Submit ------------
+    # --- Fungsi Submit ---
     def buka_kartu():
         nama = NAMA.get()
         umur = UMUR.get()
@@ -115,6 +114,10 @@ def buka_form_member():
     ttk.Entry(frame_input, textvariable=NAMA).pack(fill='x')
     ttk.Label(frame_input, text="Umur:", foreground="white", background="#1E1E2E").pack(anchor="w", pady=(10,0))
     ttk.Entry(frame_input, textvariable=UMUR).pack(fill='x')
+    ttk.Label(frame_input, text="Jenis_Kelamin:", foreground="white", background="#1E1E2E").pack(anchor="w", pady=(10,0))
+    ttk.Entry(frame_input, textvariable=JENIS_KELAMIN).pack(fill='x')
+    ttk.Label(frame_input, text="Agama:", foreground="white", background="#1E1E2E").pack(anchor="w", pady=(10,0))
+    ttk.Entry(frame_input, textvariable=AGAMA).pack(fill='x')
     ttk.Button(frame_input, text="Buat Kartu Member", style="submit_btn.TButton",
                command=buka_kartu).pack(pady=20, fill='x')
 
