@@ -1,6 +1,2 @@
-naya,18,p,islam
-naya,18,p,islam
-nn,1,p,is
-nay,18,p,islam
-n,1,r,i
-na,1,w,i
+naya,18,wanita,islam
+pita,11, p,islam

@@ -98,7 +98,7 @@ def buka_form_member():
         frame = ttk.Frame(gui2)
         frame.pack(padx=20, pady=20, fill='both', expand=True)
         
-        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('Impact', 14, 'bold')).pack(pady=10)
+        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('Display', 14, 'bold')).pack(pady=10)
         ttk.Label(frame, text=f"Nama   : {nama}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
         ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
