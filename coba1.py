@@ -37,6 +37,37 @@ def masuk():
 
     else:
         messagebox.showerror("Gagal Login", "Waduh.. Username / password kamu salah")
+def lihat_member():
+    win = tk.Toplevel()
+    win.title("Daftar Member")
+    win.geometry("400x300")
+
+    text = tk.Text(win)
+    text.pack(fill='both', expand=True)
+
+    try:
+        with open("data_member.txt", "r") as file:
+            data = file.read()
+            text.insert("end", data if data else "Belum ada member.")
+    except:
+        text.insert("end", "File tidak ditemukan.")
+def buka_form_member():
+    gui = tk.Tk()
+    gui.geometry("400x520")
+    gui.title("MEMBER MINI MARKET")
+
+    # ===== MENU BAR =====
+    menu_bar = tk.Menu(gui)
+    gui.config(menu=menu_bar)
+
+    menu_member = tk.Menu(menu_bar, tearoff=0)
+    menu_bar.add_cascade(label="Menu Member", menu=menu_member)
+
+    menu_member.add_command(label="Lihat Daftar Member", command=lihat_member)
+    menu_member.add_command(label="Hapus Member", command=hapus_member)
+    menu_member.add_command(label="Update Member", command=update_member)
+    menu_member.add_separator()
+    menu_member.add_command(label="Keluar", command=gui.destroy)
 
 tk.Label(login, text="LOGIN", bg="#391E10", fg="white",
          font=('calibri', 16, 'bold')).pack(pady=10)
@@ -102,21 +133,19 @@ def buka_form_member():
 
         #----------------------Kartu
         frame = ttk.Frame(gui2)
-<<<<<<< HEAD
+
         frame.pack(padx=20, pady=20, fill='both', expand=True)
         
-        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('Display', 14, 'bold')).pack(pady=10)
-=======
-        frame.pack(padx=20, pady=15, expand=False)
-        label_info.pack(padx=10,fill='y')
-      
-        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET", font=('calibri', 14, 'bold')).pack()
->>>>>>> 44ae7718dabe217add5ea83e3a8a4cbd0c652a70
-        ttk.Label(frame, text=f"Nama   : {nama}", font=('calibri', 12)).pack()
-        ttk.Label(frame, text=f"Umur   : {umur}", font=('calibri', 12)).pack()
-        ttk.Label(frame, text=f"Jenis Kelamin   : {jenis_kelamin}", font=('calibri', 12)).pack()
-        ttk.Label(frame, text=f"Agama   : {agama}", font=('calibri', 12)).pack()
-    
+        ttk.Label(frame, text="KARTU MEMBER MINI-MARKET",
+          font=('calibri', 14, 'bold')).pack()
+
+        ttk.Label(frame, text=f"Nama : {nama}", font=('calibri', 12)).pack()
+        ttk.Label(frame, text=f"Umur : {umur}", font=('calibri', 12)).pack()
+        ttk.Label(frame, text=f"Jenis Kelamin : {jenis_kelamin}", font=('calibri', 12)).pack()
+
+        ttk.Label(frame, text=f"Agama : {agama}", font=('calibri', 12)).pack()
+
+
    
     # ------------ GUI UTAMA ------------
     ttk.Label(gui, text="DAFTAR MEMBER", foreground="white", background="#391E10",
