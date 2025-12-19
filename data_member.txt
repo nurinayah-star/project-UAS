@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 naya,17,p,islam
 naya,18,p8282,uww
 naya,19,p,islam
@@ -31,3 +32,7 @@ vff,46,dd,dfv
 rhn,464,bt,rbt
 hrt,4453,fbfg,fb
 dilla,17,pr,is
+=======
+>>>>>>> 0d07c69ff85194fc512db761e4260d47fce41c1e
+dil,17,pr,is
+dilla,11,Perempuan,islam
