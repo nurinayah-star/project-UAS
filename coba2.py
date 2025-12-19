@@ -27,7 +27,7 @@ def masuk():
     pw = PASSWORD.get()
 
     if user == "" or pw == "":
-        messagebox.showerror("Error", "Data nya ngga boleh kosong yaa!😊")
+        messagebox.showerror("Error", "Data nya ngga boleh kosong yaa!")
         return
 
     if user == "remajajompo" and pw == "123":
@@ -146,7 +146,7 @@ def buka_kelola_member():
             clear_form()
             messagebox.showinfo("Terhapus", "Data member berhasil dihapus.")
 
-    # 3. UPDATE MEMBER
+    # 3. UPDATE MEMBER 
     def update_member():
         selected = tabel.selection()
         if not selected:
@@ -165,7 +165,7 @@ def buka_kelola_member():
         index = int(selected[0])
         data = baca_data()
         
-        # Timpa data lama dengan yang baru di inputan
+        #----------------------------Timpa data lama dengan yang baru di inputan
         data[index] = [nama, umur, jk, agama]
         
         simpan_semua_data(data)
@@ -188,7 +188,7 @@ def buka_kelola_member():
             messagebox.showwarning("Info", "Pilih data member di tabel dulu, atau isi form!")
             return
 
-        # Pop up Kartu
+        #-----------------------------Pop up Kartu
         gui2 = tk.Toplevel()
         gui2.title("KARTU MEMBER")
         gui2.geometry("450x280")
@@ -206,9 +206,9 @@ def buka_kelola_member():
         ttk.Label(frame_kartu, text=f"Gender: {jk_k}", font=('calibri', 12)).pack(anchor='w', padx=50)
         ttk.Label(frame_kartu, text=f"Agama : {agama_k}", font=('calibri', 12)).pack(anchor='w', padx=50)
         ttk.Label(frame_kartu, text="----------------------------------").pack()
-        ttk.Label(frame_kartu, text="*Berlaku Selamanya", font=('calibri', 8, 'italic')).pack(pady=10)
+        ttk.Label(frame_kartu, text="*Berlaku Selamanya terimaksih""nay and dil", font=('calibri', 8, 'italic')).pack(pady=10)
 
-    # --- Event Handler ---
+    # ----------------------------Event Handler
     def pilih_baris(event):
         # Saat baris tabel diklik, isi form input otomatis (agar siap diedit/dilihat)
         selected = tabel.selection()
@@ -220,7 +220,7 @@ def buka_kelola_member():
             JENIS_KELAMIN.set(values[2])
             AGAMA.set(values[3])
 
-    # ------------ GUI LAYOUT ------------
+    # -------------------------------GUI LAYOUT
     
     # 1. Header
     ttk.Label(gui, text="KELOLA DATA MEMBER", foreground="white", background="#391E10",
@@ -238,7 +238,7 @@ def buka_kelola_member():
     ttk.Entry(frame_input, textvariable=UMUR, width=30).grid(row=1, column=1, padx=10)
     
     ttk.Label(frame_input, text="Gender:", background="#B1B1B1").grid(row=2, column=0, sticky='w', padx=10, pady=5)
-    # Gunakan Combobox biar rapi untuk gender
+    # Gunakan Combobox untuk cumn 2 pilihan gen
     combo_jk = ttk.Combobox(frame_input, textvariable=JENIS_KELAMIN, width=27, state="readonly")
     combo_jk['values'] = ('Laki-laki', 'Perempuan')
     combo_jk.grid(row=2, column=1, padx=10)
@@ -254,7 +254,7 @@ def buka_kelola_member():
     ttk.Button(frame_btn, text="UPDATE DATA", command=update_member).grid(row=0, column=1, padx=5)
     ttk.Button(frame_btn, text="HAPUS DATA", command=hapus_member).grid(row=0, column=2, padx=5)
     ttk.Button(frame_btn, text="LIHAT KARTU", command=lihat_kartu).grid(row=0, column=3, padx=5)
-    ttk.Button(frame_btn, text="RESET FORM", command=clear_form).grid(row=0, column=4, padx=5)
+    
 
     # 4. Tabel Data (Treeview)
     frame_tabel = ttk.Frame(gui)
@@ -282,6 +282,7 @@ def buka_kelola_member():
 
     # Bind event klik
     tabel.bind('<<TreeviewSelect>>', pilih_baris)
+
 
 
 
