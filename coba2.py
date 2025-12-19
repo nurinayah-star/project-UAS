@@ -1,3 +1,4 @@
+from datetime import date
 import tkinter as tk
 from tkinter import ttk, messagebox, StringVar
 import os
@@ -162,13 +163,9 @@ def buka_kelola_member():
              messagebox.showwarning("Gagal", "Data tidak boleh kosong saat update!")
              return
 
-        index = int(selected[0])
-        data = baca_data()
-        
-        #----------------------------Timpa data lama dengan yang baru di inputan
-        data[index] = [nama, umur, jk, agama]
-        
-        simpan_semua_data(data)
+
+
+        simpan_semua_data()
         refresh_tabel()
         clear_form()
         messagebox.showinfo("Update", "Data member berhasil diperbarui!")
