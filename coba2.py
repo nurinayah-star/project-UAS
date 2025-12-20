@@ -148,28 +148,40 @@ def buka_kelola_member():
             messagebox.showinfo("Terhapus", "Data member berhasil dihapus.")
 
     # 3. UPDATE MEMBER 
+    # 3. UPDATE MEMBER 
     def update_member():
         selected = tabel.selection()
         if not selected:
             messagebox.showwarning("Pilih Data", "Klik dulu member di tabel yang mau diedit!")
             return
         
+        # 1. Ambil data baru dari form input
         nama = NAMA.get()
         umur = UMUR.get()
         jk = JENIS_KELAMIN.get()
         agama = AGAMA.get()
 
-        if nama == "" or umur == "":
-             messagebox.showwarning("Gagal", "Data tidak boleh kosong saat update!")
+        if nama == "" or umur == "" or jk == "" or agama == "":
+             messagebox.showwarning("Gagal", "Data tidak boleh ada yang kosong!")
              return
 
-
-
-        simpan_semua_data()
-        refresh_tabel()
-        clear_form()
-        messagebox.showinfo("Update", "Data member berhasil diperbarui!")
-
+        # 2. Konfirmasi update
+        confirm = messagebox.askyesno("Konfirmasi", "Yakin ingin mengubah data ini?")
+        if confirm:
+            index = int(selected[0]) # Ambil nomor baris
+            data = baca_data()        # Baca semua data dari file ke list
+            
+            # 3. Timpa data lama dengan data baru di index tersebut
+            data[index] = [nama, umur, jk, agama]
+            
+            # 4. Simpan kembali list yang sudah diupdate ke file
+            simpan_semua_data(data)
+            
+            # 5. Segarkan tampilan tabel dan bersihkan form
+            refresh_tabel()
+            clear_form()
+            messagebox.showinfo("Update", "Data member berhasil diperbarui!")
+        
     # 4. LIHAT KARTU MEMBER
     def lihat_kartu():
         selected = tabel.selection()
@@ -203,7 +215,7 @@ def buka_kelola_member():
         ttk.Label(frame_kartu, text=f"Gender: {jk_k}", font=('calibri', 12)).pack(anchor='w', padx=50)
         ttk.Label(frame_kartu, text=f"Agama : {agama_k}", font=('calibri', 12)).pack(anchor='w', padx=50)
         ttk.Label(frame_kartu, text="----------------------------------").pack()
-        ttk.Label(frame_kartu, text="*Berlaku Selamanya terimaksih""nay and dil", font=('calibri', 8, 'italic')).pack(pady=10)
+        ttk.Label(frame_kartu, text="*Berlaku Selamanya terimaksih #nay and dil", font=('calibri', 8, 'italic')).pack(pady=10)
 
     # ----------------------------Event Handler
     def pilih_baris(event):
