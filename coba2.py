@@ -147,7 +147,6 @@ def buka_kelola_member():
             clear_form()
             messagebox.showinfo("Terhapus", "Data member berhasil dihapus.")
 
-
     # 3. UPDATE MEMBER 
     def update_member():
         selected = tabel.selection()
