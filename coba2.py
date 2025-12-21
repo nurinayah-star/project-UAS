@@ -12,7 +12,7 @@ login.configure(background="#B1B1B1")
 #----------------------STYLE & KONFIGURASI
 style = ttk.Style()
 style.theme_use('clam')
-style.configure("white.TLabel", background="#391E10", foreground='white')
+style.configure(background="#391E10", foreground="white")
 style.configure("submit_btn.TButton", font=('calibri', 10, 'bold'))
 style.configure("Treeview", font=('calibri', 10), rowheight=25)
 style.configure("Treeview.Heading", font=('calibri', 11, 'bold'))
