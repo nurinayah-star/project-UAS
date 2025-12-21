@@ -1,2 +1,3 @@
 nay,19,Perempuan,islam
-nay,19,Perempuan,islam
+naya,19,Perempuan,islam
+naya,19,Perempuan,islam

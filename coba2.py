@@ -10,6 +10,7 @@ login.resizable(False, False)
 login.title("LOGIN ADMIN")
 login.configure(background="#B1B1B1")
 
+
 #----------------------STYLE & KONFIGURASI
 style = ttk.Style()
 style.theme_use('clam')
@@ -21,6 +22,8 @@ style.configure("Treeview.Heading", font=('calibri', 11, 'bold'))
 USERNAME = StringVar()
 PASSWORD = StringVar()
 FILE_MEMBER = "data_member.txt"
+
+
 
 #-----------------------Fungsi Login
 def masuk():
@@ -45,6 +48,8 @@ ttk.Label(login, text="Silahkan Masuk", style="white.TLabel").pack()
 frame_log = ttk.Frame(login)
 frame_log.pack(pady=15, padx=20, fill='x')
 
+ttk.Label(login, text='More Info: @_inayaa.h | @nufdhmn', background="#B1B1B1").pack(side='bottom', pady=10)
+
 ttk.Label(frame_log, text="👤 Username:", style="white.TLabel").pack(anchor="w")
 ttk.Entry(frame_log, textvariable=USERNAME).pack(fill='x')
 ttk.Label(frame_log, text="🔑 Password:", style="white.TLabel").pack(anchor="w", pady=(10,0))
@@ -52,6 +57,8 @@ ttk.Entry(frame_log, textvariable=PASSWORD, show="*").pack(fill='x')
 ttk.Button(frame_log, text="MASUK", style="submit_btn.TButton", command=masuk).pack(pady=20, fill='x')
 
 ttk.Label(login, text='More Info: @_inayaa.h | @nufdhmn', background="#B1B1B1").pack(side='bottom', pady=10)
+
+
 
 
 #---------------------------------------------------------
@@ -69,6 +76,7 @@ def buka_kelola_member():
     UMUR = StringVar()
     JENIS_KELAMIN = StringVar()
     AGAMA = StringVar()
+
 
     # --- Helper: Baca & Tulis File ---
     def baca_data():
@@ -103,6 +111,7 @@ def buka_kelola_member():
         UMUR.set("")
         JENIS_KELAMIN.set("")
         AGAMA.set("")
+
         # Hilangkan seleksi di tabel
         if tabel.selection():
             tabel.selection_remove(tabel.selection())
@@ -124,7 +133,7 @@ def buka_kelola_member():
             return
 
         with open(FILE_MEMBER, "a") as file:
-            file.write(f"{nama},{umur},{jk},{agama}\n")
+            file.write(f"{nama},{umur},{jk},{agama},\n")
         
         messagebox.showinfo("Sukses", "Member berhasil ditambahkan!")
         clear_form()
@@ -138,7 +147,7 @@ def buka_kelola_member():
             return
         
         confirm = messagebox.askyesno("Konfirmasi", "Yakin mau menghapus member ini?")
-        if confirm:
+        if confirm: 
             index = int(selected[0]) # Ambil index baris
             data = baca_data()
             del data[index] # Hapus dari list
@@ -147,7 +156,7 @@ def buka_kelola_member():
             clear_form()
             messagebox.showinfo("Terhapus", "Data member berhasil dihapus.")
 
-    # 3. UPDATE MEMBER 
+    
     # 3. UPDATE MEMBER 
     def update_member():
         selected = tabel.selection()
@@ -172,7 +181,7 @@ def buka_kelola_member():
             data = baca_data()        # Baca semua data dari file ke list
             
             # 3. Timpa data lama dengan data baru di index tersebut
-            data[index] = [nama, umur, jk, agama]
+            data[index] = [nama, umur, jk, agama,]
             
             # 4. Simpan kembali list yang sudah diupdate ke file
             simpan_semua_data(data)
@@ -228,6 +237,7 @@ def buka_kelola_member():
             UMUR.set(values[1])
             JENIS_KELAMIN.set(values[2])
             AGAMA.set(values[3])
+        
 
     # -------------------------------GUI LAYOUT
     
@@ -255,6 +265,7 @@ def buka_kelola_member():
     ttk.Label(frame_input, text="Agama:", background="#B1B1B1").grid(row=3, column=0, sticky='w', padx=10, pady=5)
     ttk.Entry(frame_input, textvariable=AGAMA, width=30).grid(row=3, column=1, padx=10)
 
+
     # 3. Tombol Menu (CRUD)
     frame_btn = ttk.Frame(gui)
     frame_btn.pack(pady=10)
@@ -276,11 +287,13 @@ def buka_kelola_member():
     tabel.heading('umur', text='Umur')
     tabel.heading('jk', text='Jenis Kelamin')
     tabel.heading('agama', text='Agama')
+    
 
     tabel.column('nama', width=150)
     tabel.column('umur', width=50, anchor='center')
     tabel.column('jk', width=100)
     tabel.column('agama', width=100)
+   
 
     # Scrollbar untuk tabel
     scroll = ttk.Scrollbar(frame_tabel, orient="vertical", command=tabel.yview)
@@ -291,7 +304,6 @@ def buka_kelola_member():
 
     # Bind event klik
     tabel.bind('<<TreeviewSelect>>', pilih_baris)
-
 
 
 
