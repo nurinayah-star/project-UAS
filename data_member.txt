@@ -1,0 +1,6 @@
+<<<<<<< HEAD
+=======
+nay,19,Perempuan,islam
+naya,19,Perempuan,islam
+naya,19,Perempuan,islam
+>>>>>>> 1dafde7059a409db7b11f83ebcd318c094744080
