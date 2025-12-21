@@ -1,3 +1,12 @@
+<<<<<<< HEAD
 dil,20,Perempuan,islam
 naya,19,Perempuan,islam
 naya,19,Perempuan,islam,
+=======
+<<<<<<< HEAD
+=======
+nay,19,Perempuan,islam
+naya,19,Perempuan,islam
+naya,19,Perempuan,islam
+>>>>>>> 1dafde7059a409db7b11f83ebcd318c094744080
+>>>>>>> 65355acfd9436bd85ba99b46f104a322af0d5a85
