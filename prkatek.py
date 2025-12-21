@@ -11,8 +11,8 @@ login.configure(bg="#FFB6C1")     #warna tampilan widget nya
 
 #-------------STYLE KONFIGURASI------------
 style = ttk.Style()        #pake ttk.Style agar tampilan warna konsisten bisa diubah-ubah
-style.theme_use('clam')    #memilih tema GUI bernama 'clam', warna fleksibel, bisa diatur
-style.configure(background="#FFB6C1", foreground="white")
+style.themese('clam')    #memilih tema GUI bernama 'clam', warna fleksibel, bisa diatur
+style.configure("white.TLabel", background="#FFB6C1", foreground="white")
 style.configure("submit_btn.TButton", font=('calibri', 10, 'bold'))  #mengatur style font tombol, ukuran, dan tebal nya
 style.configure("Treeview", font=('calibri', 10), rowheight=25)    #mengatur tampilan isi tabel
 style.configure("Treeview.Heading", font=('calibri', 10, 'bold'))   #mengatur judul kolom
@@ -39,8 +39,10 @@ tk.Label(login, text="LOGIN ADMIN", bg="#FFB6C", fg="#white",  #untuk label pada
          font=('calibri', 16, 'bold')).pack(pady=10)
 ttk.Label(login, text="Silahkan Masuk", style="white.TLabel").pack()
 
-frame_log = (ttk.Frame.login)    #frame = wadah untuk komponen login
-frame_log.pack(pady=10, padx=15)
+frame_log = (ttk.Frame.login)    #frame = wadah untuk login
+frame_log.pack(pady=10, padx=15)   #pady = kanan kiri
+
+ttk.Label(frame_log, )
 
 
 login.mainloop()
