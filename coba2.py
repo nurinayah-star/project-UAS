@@ -3,13 +3,12 @@ import tkinter as tk
 from tkinter import ttk, messagebox, StringVar
 import os
 
-#----------------------WINDOW LOGIN
+#----------------------WINDOW LOGIN 
 login = tk.Tk()
 login.geometry('350x400')
 login.resizable(False, False)
 login.title("LOGIN ADMIN")
 login.configure(background="#B1B1B1")
-
 
 #----------------------STYLE & KONFIGURASI
 style = ttk.Style()
@@ -22,8 +21,6 @@ style.configure("Treeview.Heading", font=('calibri', 11, 'bold'))
 USERNAME = StringVar()
 PASSWORD = StringVar()
 FILE_MEMBER = "data_member.txt"
-
-
 
 #-----------------------Fungsi Login
 def masuk():
@@ -48,8 +45,6 @@ ttk.Label(login, text="Silahkan Masuk", style="white.TLabel").pack()
 frame_log = ttk.Frame(login)
 frame_log.pack(pady=15, padx=20, fill='x')
 
-ttk.Label(login, text='More Info: @_inayaa.h | @nufdhmn', background="#B1B1B1").pack(side='bottom', pady=10)
-
 ttk.Label(frame_log, text="👤 Username:", style="white.TLabel").pack(anchor="w")
 ttk.Entry(frame_log, textvariable=USERNAME).pack(fill='x')
 ttk.Label(frame_log, text="🔑 Password:", style="white.TLabel").pack(anchor="w", pady=(10,0))
@@ -57,9 +52,6 @@ ttk.Entry(frame_log, textvariable=PASSWORD, show="*").pack(fill='x')
 ttk.Button(frame_log, text="MASUK", style="submit_btn.TButton", command=masuk).pack(pady=20, fill='x')
 
 ttk.Label(login, text='More Info: @_inayaa.h | @nufdhmn', background="#B1B1B1").pack(side='bottom', pady=10)
-
-
-
 
 #---------------------------------------------------------
 #       FUNGSI UTAMA (KELOLA MEMBER)
@@ -76,7 +68,6 @@ def buka_kelola_member():
     UMUR = StringVar()
     JENIS_KELAMIN = StringVar()
     AGAMA = StringVar()
-
 
     # --- Helper: Baca & Tulis File ---
     def baca_data():
@@ -156,7 +147,7 @@ def buka_kelola_member():
             clear_form()
             messagebox.showinfo("Terhapus", "Data member berhasil dihapus.")
 
-    
+
     # 3. UPDATE MEMBER 
     def update_member():
         selected = tabel.selection()
@@ -226,7 +217,7 @@ def buka_kelola_member():
         ttk.Label(frame_kartu, text="----------------------------------").pack()
         ttk.Label(frame_kartu, text="*Berlaku Selamanya terimaksih #nay and dil", font=('calibri', 8, 'italic')).pack(pady=10)
 
-    # ----------------------------Event Handler
+    # ----------------------------Event Handler {saat di klik maka langsung terisi di from}
     def pilih_baris(event):
         # Saat baris tabel diklik, isi form input otomatis (agar siap diedit/dilihat)
         selected = tabel.selection()
@@ -238,7 +229,6 @@ def buka_kelola_member():
             JENIS_KELAMIN.set(values[2])
             AGAMA.set(values[3])
         
-
     # -------------------------------GUI LAYOUT
     
     # 1. Header
@@ -275,7 +265,6 @@ def buka_kelola_member():
     ttk.Button(frame_btn, text="HAPUS DATA", command=hapus_member).grid(row=0, column=2, padx=5)
     ttk.Button(frame_btn, text="LIHAT KARTU", command=lihat_kartu).grid(row=0, column=3, padx=5)
     
-
     # 4. Tabel Data (Treeview)
     frame_tabel = ttk.Frame(gui)
     frame_tabel.pack(padx=20, pady=5, fill='both', expand=True)
@@ -288,13 +277,11 @@ def buka_kelola_member():
     tabel.heading('jk', text='Jenis Kelamin')
     tabel.heading('agama', text='Agama')
     
-
     tabel.column('nama', width=150)
     tabel.column('umur', width=50, anchor='center')
     tabel.column('jk', width=100)
     tabel.column('agama', width=100)
    
-
     # Scrollbar untuk tabel
     scroll = ttk.Scrollbar(frame_tabel, orient="vertical", command=tabel.yview)
     tabel.configure(yscroll=scroll.set)
@@ -304,8 +291,6 @@ def buka_kelola_member():
 
     # Bind event klik
     tabel.bind('<<TreeviewSelect>>', pilih_baris)
-
-
 
     gui.mainloop()
 
